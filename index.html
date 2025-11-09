@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Neon Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .grid-bg {
+      background: radial-gradient(circle at center,
+          rgba(0, 255, 255, 0.05),
+          transparent 40%),
+        repeating-linear-gradient(90deg,
+          rgba(0, 255, 255, 0.1) 0px,
+          rgba(0, 255, 255, 0.1) 1px,
+          transparent 1px,
+          transparent 80px),
+        repeating-linear-gradient(0deg,
+          rgba(0, 255, 255, 0.1) 0px,
+          rgba(0, 255, 255, 0.1) 1px,
+          transparent 1px,
+          transparent 80px);
+      animation: gridMove 15s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% {
+        background-position: 0px 0px;
+      }
+
+      100% {
+        background-position: 80px 80px;
+      }
+    }
+
+    .glow-text {
+      text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+    }
+
+    .neon-card {
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      transition: 0.3s ease;
+    }
+
+    .neon-card:hover {
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.45);
+      transform: translateY(-6px);
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease-out;
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0px) !important;
+    }
+
+    .edge-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: cyan;
+      box-shadow: 0 0 30px cyan;
+      opacity: 0.35;
+      z-index: 50;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-cyan-300 font-mono overflow-x-hidden">
+
+  <div class="edge-glow"></div>
+
+  <div class="fixed inset-0 -z-10 grid-bg"></div>
+
+  <header class="fixed w-full top-0 neon-card z-50 py-4">
+    <nav class="max-w-5xl mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-xl font-bold glow-text">Yelisetti Vignesh</h1>
+      <ul class="flex gap-6 text-sm">
+        <li><a href="#about" class="hover:text-white">About</a></li>
+        <li><a href="#skills" class="hover:text-white">Skills</a></li>
+        <li><a href="#projects" class="hover:text-white">Projects</a></li>
+        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-5xl md:text-7xl font-extrabold glow-text mb-4">Welcome to my Portfolio</h2>
+    <a href="#projects"
+      class="px-10 py-3 rounded-md neon-card font-semibold hover:text-black hover:bg-cyan-300 transition">
+      Access Projects
+    </a>
+  </section>
+
+  <section id="about" class="max-w-5xl mx-auto px-6 py-24 fade-section">
+    <h3 class="text-4xl font-bold glow-text mb-6">ABOUT ME</h3>
+    <div class="neon-card p-6 rounded-xl">
+      <p class="text-cyan-200">
+        Hi, I’m someone who enjoys building things which i think it will make life easier.  
+        I like to think and try to make projects which are useful, and learning how different technologies fit together.  
+        Right now, I’m exploring more in AI/ML and improving my skills one project at a time.  
+        I enjoy working on ideas that feel fun, useful, or just interesting to build. 
+        I’m still learning, but I’m always excited about what I can make next.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="max-w-5xl mx-auto px-6 py-20 fade-section">
+    <h3 class="text-4xl font-bold glow-text mb-10">SKILLS</h3>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div class="neon-card p-4 rounded-lg text-center font-semibold tilt">HTML</div>
+      <div class="neon-card p-4 rounded-lg text-center font-semibold tilt">CSS</div>
+      <div class="neon-card p-4 rounded-lg text-center font-semibold tilt">JavaScript</div>
+      <div class="neon-card p-4 rounded-lg text-center font-semibold tilt">Python</div>
+      <div class="neon-card p-4 rounded-lg text-center font-semibold tilt">C++</div>
+    </div>
+  </section>
+
+  <section id="projects" class="max-w-5xl mx-auto px-6 py-20 fade-section">
+    <h3 class="text-4xl font-bold glow-text mb-10">PROJECTS</h3>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="neon-card p-6 rounded-xl tilt">
+        <h4 class="text-xl font-bold text-white mb-2">Hobby Predictor</h4>
+        <p class="text-cyan-200 mb-3">A ML project to understand the basics of ML</p>
+        <a href="https://github.com/Vigneshcse1245/Hobby-Predictor" class="text-cyan-300 underline hover:text-white">Enter →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-5xl mx-auto px-6 py-24 text-center fade-section">
+    <h3 class="text-4xl font-bold glow-text mb-6">CONTACT</h3>
+    <p class="text-cyan-200 mb-6">My Email</p>
+
+    <a href="mailto:you@example.com"
+      class="px-10 py-3 rounded-md neon-card font-semibold hover:bg-cyan-300 hover:text-black transition">
+      Send mail
+    </a>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
